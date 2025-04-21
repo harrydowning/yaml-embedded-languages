@@ -158,4 +158,8 @@ export const LANGUAGES = {
     scopeName: "source.yaml",
     stripIndent: true,
   },
+  helm: {
+    scopeName: "source.helm",
+    stripIndent: true,
+  },
 };
