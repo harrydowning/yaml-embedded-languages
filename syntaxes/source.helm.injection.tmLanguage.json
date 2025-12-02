@@ -1,0 +1,6206 @@
+{
+  "scopeName": "source.helm.injection",
+  "injectionSelector": "L:source.helm -comment -string",
+  "patterns": [
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*bat\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.bat",
+              "patterns": [
+                {
+                  "include": "source.batchfile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*bibtex\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.bibtex",
+              "patterns": [
+                {
+                  "include": "text.bibtex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.c",
+              "patterns": [
+                {
+                  "include": "source.c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c#\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.c#",
+              "patterns": [
+                {
+                  "include": "source.cs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c\\+\\+\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.c\\+\\+",
+              "patterns": [
+                {
+                  "include": "source.cpp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*clojure\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.clojure",
+              "patterns": [
+                {
+                  "include": "source.clojure"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*coffee\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.coffee",
+              "patterns": [
+                {
+                  "include": "source.coffee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*cpp\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.cpp",
+              "patterns": [
+                {
+                  "include": "source.cpp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*csharp\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.csharp",
+              "patterns": [
+                {
+                  "include": "source.cs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*css\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.css",
+              "patterns": [
+                {
+                  "include": "source.css"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*cuda\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.cuda",
+              "patterns": [
+                {
+                  "include": "source.cuda-cpp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dart\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.dart",
+              "patterns": [
+                {
+                  "include": "source.dart"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*diff\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "while": "^$|\\1",
+              "name": "meta.embedded.inline.diff",
+              "patterns": [
+                {
+                  "include": "source.diff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dockercompose\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "while": "^$|\\1",
+              "name": "meta.embedded.inline.dockercompose",
+              "patterns": [
+                {
+                  "include": "source.yaml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dockerfile\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.dockerfile",
+              "patterns": [
+                {
+                  "include": "source.dockerfile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*f#\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.f#",
+              "patterns": [
+                {
+                  "include": "source.fsharp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*fsharp\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.fsharp",
+              "patterns": [
+                {
+                  "include": "source.fsharp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*go\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.go",
+              "patterns": [
+                {
+                  "include": "source.go"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*groovy\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.groovy",
+              "patterns": [
+                {
+                  "include": "source.groovy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*handlebars\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.handlebars",
+              "patterns": [
+                {
+                  "include": "text.html.handlebars"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*hlsl\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.hlsl",
+              "patterns": [
+                {
+                  "include": "source.hlsl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*html\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.html",
+              "patterns": [
+                {
+                  "include": "text.html.derivative"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ini\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.ini",
+              "patterns": [
+                {
+                  "include": "source.ini"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jade\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.jade",
+              "patterns": [
+                {
+                  "include": "text.pug"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*java\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.java",
+              "patterns": [
+                {
+                  "include": "source.java"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*javascript\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.javascript",
+              "patterns": [
+                {
+                  "include": "source.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*js\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.js",
+              "patterns": [
+                {
+                  "include": "source.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*json\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.json",
+              "patterns": [
+                {
+                  "include": "source.json"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsonc\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.jsonc",
+              "patterns": [
+                {
+                  "include": "source.json.comments"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsonl\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.jsonl",
+              "patterns": [
+                {
+                  "include": "source.json.lines"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsx\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.jsx",
+              "patterns": [
+                {
+                  "include": "source.js.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*julia\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.julia",
+              "patterns": [
+                {
+                  "include": "source.julia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*latex\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "while": "^$|\\1",
+              "name": "meta.embedded.inline.latex",
+              "patterns": [
+                {
+                  "include": "text.tex.latex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*less\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.less",
+              "patterns": [
+                {
+                  "include": "source.css.less"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*log\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.log",
+              "patterns": [
+                {
+                  "include": "text.log"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*lua\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.lua",
+              "patterns": [
+                {
+                  "include": "source.lua"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*make\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.make",
+              "patterns": [
+                {
+                  "include": "source.makefile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*makefile\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.makefile",
+              "patterns": [
+                {
+                  "include": "source.makefile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*markdown\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "while": "^$|\\1",
+              "name": "meta.embedded.inline.markdown",
+              "patterns": [
+                {
+                  "include": "text.html.markdown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*math\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.math",
+              "patterns": [
+                {
+                  "include": "text.html.markdown.math"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*objc\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.objc",
+              "patterns": [
+                {
+                  "include": "source.objc"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*objcpp\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.objcpp",
+              "patterns": [
+                {
+                  "include": "source.objcpp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*perl\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.perl",
+              "patterns": [
+                {
+                  "include": "source.perl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*php\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.php",
+              "patterns": [
+                {
+                  "include": "text.html.php"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*pip\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.pip",
+              "patterns": [
+                {
+                  "include": "source.pip-requirements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*powerfx\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.powerfx",
+              "patterns": [
+                {
+                  "include": "source.js"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*powershell\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.powershell",
+              "patterns": [
+                {
+                  "include": "source.powershell"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*properties\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.properties",
+              "patterns": [
+                {
+                  "include": "source.ini"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*py\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.py",
+              "patterns": [
+                {
+                  "include": "source.python"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*python\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.python",
+              "patterns": [
+                {
+                  "include": "source.python"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*r\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.r",
+              "patterns": [
+                {
+                  "include": "source.r"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*raku\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.raku",
+              "patterns": [
+                {
+                  "include": "source.perl.6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*razor\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.razor",
+              "patterns": [
+                {
+                  "include": "text.html.cshtml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*regex\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.regex",
+              "patterns": [
+                {
+                  "include": "source.js.regexp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*requirements\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.requirements",
+              "patterns": [
+                {
+                  "include": "source.pip-requirements"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*rst\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.rst",
+              "patterns": [
+                {
+                  "include": "source.rst"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ruby\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.ruby",
+              "patterns": [
+                {
+                  "include": "source.ruby"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*rust\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.rust",
+              "patterns": [
+                {
+                  "include": "source.rust"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*scss\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.scss",
+              "patterns": [
+                {
+                  "include": "source.css.scss"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*shaderlab\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.shaderlab",
+              "patterns": [
+                {
+                  "include": "source.shaderlab"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*shell\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.shell",
+              "patterns": [
+                {
+                  "include": "source.shell"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*sql\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.sql",
+              "patterns": [
+                {
+                  "include": "source.sql"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*swift\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.swift",
+              "patterns": [
+                {
+                  "include": "source.swift"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*tex\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.tex",
+              "patterns": [
+                {
+                  "include": "text.tex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ts\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.ts",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*tsx\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.tsx",
+              "patterns": [
+                {
+                  "include": "source.tsx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*typescript\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.typescript",
+              "patterns": [
+                {
+                  "include": "source.ts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*vb\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.vb",
+              "patterns": [
+                {
+                  "include": "source.asp.vb.net"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*xml\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.xml",
+              "patterns": [
+                {
+                  "include": "text.xml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*xsl\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "name": "meta.embedded.inline.xsl",
+              "patterns": [
+                {
+                  "include": "text.xml.xsl"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*yaml\\s*$",
+      "beginCaptures": {
+        "0": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.flow.block-scalar.literal.yaml"
+            },
+            "2": {
+              "name": "keyword.control.flow.block-scalar.folded.yaml"
+            },
+            "3": {
+              "name": "constant.numeric.indentation-indicator.yaml"
+            },
+            "4": {
+              "name": "storage.modifier.chomping-indicator.yaml"
+            },
+            "5": {
+              "patterns": [
+                {
+                  "include": "source.helm#comment"
+                },
+                {
+                  "match": ".+",
+                  "name": "invalid.illegal.expected-comment-or-newline.yaml"
+                }
+              ]
+            }
+          },
+          "end": "^(?=\\S)|(?!\\G)",
+          "patterns": [
+            {
+              "begin": "(?>^|\\G)([ ]+)(?! )",
+              "end": "^(?!\\1|\\s*$)",
+              "while": "^$|\\1",
+              "name": "meta.embedded.inline.yaml",
+              "patterns": [
+                {
+                  "include": "source.yaml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "include": "source.helm"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bat)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.bat",
+          "patterns": [
+            {
+              "include": "source.batchfile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bibtex)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.bibtex",
+          "patterns": [
+            {
+              "include": "text.bibtex"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.c",
+          "patterns": [
+            {
+              "include": "source.c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c#)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.c#",
+          "patterns": [
+            {
+              "include": "source.cs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c\\+\\+)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.c\\+\\+",
+          "patterns": [
+            {
+              "include": "source.cpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:clojure)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.clojure",
+          "patterns": [
+            {
+              "include": "source.clojure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:coffee)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.coffee",
+          "patterns": [
+            {
+              "include": "source.coffee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cpp)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.cpp",
+          "patterns": [
+            {
+              "include": "source.cpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:csharp)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.csharp",
+          "patterns": [
+            {
+              "include": "source.cs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:css)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.css",
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cuda)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.cuda",
+          "patterns": [
+            {
+              "include": "source.cuda-cpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dart)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.dart",
+          "patterns": [
+            {
+              "include": "source.dart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:diff)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "^$|\\1",
+          "name": "meta.embedded.inline.diff",
+          "patterns": [
+            {
+              "include": "source.diff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockercompose)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "^$|\\1",
+          "name": "meta.embedded.inline.dockercompose",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockerfile)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.dockerfile",
+          "patterns": [
+            {
+              "include": "source.dockerfile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:f#)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.f#",
+          "patterns": [
+            {
+              "include": "source.fsharp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:fsharp)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.fsharp",
+          "patterns": [
+            {
+              "include": "source.fsharp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:go)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.go",
+          "patterns": [
+            {
+              "include": "source.go"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:groovy)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.groovy",
+          "patterns": [
+            {
+              "include": "source.groovy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:handlebars)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.handlebars",
+          "patterns": [
+            {
+              "include": "text.html.handlebars"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:hlsl)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.hlsl",
+          "patterns": [
+            {
+              "include": "source.hlsl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:html)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.html",
+          "patterns": [
+            {
+              "include": "text.html.derivative"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ini)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.ini",
+          "patterns": [
+            {
+              "include": "source.ini"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jade)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jade",
+          "patterns": [
+            {
+              "include": "text.pug"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:java)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.java",
+          "patterns": [
+            {
+              "include": "source.java"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:javascript)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.javascript",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:js)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:json)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.json",
+          "patterns": [
+            {
+              "include": "source.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonc)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jsonc",
+          "patterns": [
+            {
+              "include": "source.json.comments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonl)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jsonl",
+          "patterns": [
+            {
+              "include": "source.json.lines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsx)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jsx",
+          "patterns": [
+            {
+              "include": "source.js.jsx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:julia)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.julia",
+          "patterns": [
+            {
+              "include": "source.julia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:latex)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "^$|\\1",
+          "name": "meta.embedded.inline.latex",
+          "patterns": [
+            {
+              "include": "text.tex.latex"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:less)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.less",
+          "patterns": [
+            {
+              "include": "source.css.less"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:log)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.log",
+          "patterns": [
+            {
+              "include": "text.log"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:lua)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.lua",
+          "patterns": [
+            {
+              "include": "source.lua"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:make)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.make",
+          "patterns": [
+            {
+              "include": "source.makefile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:makefile)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.makefile",
+          "patterns": [
+            {
+              "include": "source.makefile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:markdown)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "^$|\\1",
+          "name": "meta.embedded.inline.markdown",
+          "patterns": [
+            {
+              "include": "text.html.markdown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:math)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.math",
+          "patterns": [
+            {
+              "include": "text.html.markdown.math"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objc)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.objc",
+          "patterns": [
+            {
+              "include": "source.objc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objcpp)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.objcpp",
+          "patterns": [
+            {
+              "include": "source.objcpp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:perl)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.perl",
+          "patterns": [
+            {
+              "include": "source.perl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:php)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.php",
+          "patterns": [
+            {
+              "include": "text.html.php"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:pip)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.pip",
+          "patterns": [
+            {
+              "include": "source.pip-requirements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powerfx)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.powerfx",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powershell)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.powershell",
+          "patterns": [
+            {
+              "include": "source.powershell"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:properties)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.properties",
+          "patterns": [
+            {
+              "include": "source.ini"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:py)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.py",
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:python)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.python",
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:r)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.r",
+          "patterns": [
+            {
+              "include": "source.r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:raku)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.raku",
+          "patterns": [
+            {
+              "include": "source.perl.6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:razor)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.razor",
+          "patterns": [
+            {
+              "include": "text.html.cshtml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:regex)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.regex",
+          "patterns": [
+            {
+              "include": "source.js.regexp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:requirements)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.requirements",
+          "patterns": [
+            {
+              "include": "source.pip-requirements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rst)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.rst",
+          "patterns": [
+            {
+              "include": "source.rst"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ruby)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.ruby",
+          "patterns": [
+            {
+              "include": "source.ruby"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rust)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.rust",
+          "patterns": [
+            {
+              "include": "source.rust"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:scss)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.scss",
+          "patterns": [
+            {
+              "include": "source.css.scss"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shaderlab)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.shaderlab",
+          "patterns": [
+            {
+              "include": "source.shaderlab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shell)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:sql)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:swift)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.swift",
+          "patterns": [
+            {
+              "include": "source.swift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tex)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.tex",
+          "patterns": [
+            {
+              "include": "text.tex"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ts)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.ts",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tsx)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.tsx",
+          "patterns": [
+            {
+              "include": "source.tsx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:typescript)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.typescript",
+          "patterns": [
+            {
+              "include": "source.ts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:vb)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.vb",
+          "patterns": [
+            {
+              "include": "source.asp.vb.net"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xml)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.xml",
+          "patterns": [
+            {
+              "include": "text.xml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xsl)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.xsl",
+          "patterns": [
+            {
+              "include": "text.xml.xsl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:yaml)\\s*)$",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "^$|\\1",
+          "name": "meta.embedded.inline.yaml",
+          "patterns": [
+            {
+              "include": "source.yaml"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

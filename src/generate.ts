@@ -33,6 +33,7 @@ export const generateFiles = (languages = LANGUAGES) => {
   const grammars = [
     new InjectionGrammar("source.yaml", parsedLanguages),
     new InjectionGrammar("source.github-actions-workflow", parsedLanguages),
+    new InjectionGrammar("source.helm", parsedLanguages),
   ];
 
   const writables = [new Package(grammars), ...grammars];
